@@ -1,0 +1,46 @@
+---
+- name: Set ansible_user to root
+  ansible.builtin.set_fact:
+    ansible_user: root
+
+- name: Warn user about system wipe
+  ansible.builtin.pause:
+    prompt: "WARNING: This will wipe the system. Press Ctrl/Cmd+C within 30 seconds to cancel."
+    seconds: 30
+
+- name: Pull archinstall package via pacman
+  community.general.pacman:
+    name: archinstall
+    state: present
+    update_cache: true
+
+- name: Create user_configuration.json file
+  ansible.builtin.copy:
+    content: "{{ archinstall_user_configuration | to_json }}"
+    dest: "/user_configuration.json"
+    mode: "0644"
+
+- name: Create creds.json file
+  ansible.builtin.copy:
+    content: "{{ archinstall_creds | to_json }}"
+    dest: "/creds.json"
+    mode: "0644"
+
+- name: Execute the arch install
+  ansible.builtin.command:
+    cmd: archinstall --config /user_configuration.json --creds /creds.json --silent
+  changed_when: true
+
+- name: Gather the package facts
+  ansible.builtin.package_facts:
+    manager: pacman
+
+- name: Enable sshd service if openssh is installed
+  ansible.builtin.command:
+    cmd: arch-chroot /mnt/archinstall systemctl enable sshd
+  changed_when: true
+  when: "'openssh' in ansible_facts.packages"
+
+- name: Notify user to manually reboot
+  ansible.builtin.debug:
+    msg: "Installation complete. Please manually reboot the system to continue."

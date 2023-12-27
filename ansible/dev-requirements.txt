@@ -1,0 +1,10 @@
+pre-commit
+ansible
+yamllint
+ansible-lint
+black
+flake8
+passlib
+docker
+molecule
+molecule-plugins

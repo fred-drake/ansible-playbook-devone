@@ -1,0 +1,7 @@
+---
+- name: Wipe and initialize
+  hosts: all
+  become: true
+
+  roles:
+    - archinstall

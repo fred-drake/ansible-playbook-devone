@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  role_name: server_laptop
+  namespace: fred_drake
+  author: Fred Drake
+  description: Role for laptop setup in a server environment
+  company: None
+  license: MIT
+
+  min_ansible_version: "2.1"
+
+  galaxy_tags: []
+
+dependencies: []

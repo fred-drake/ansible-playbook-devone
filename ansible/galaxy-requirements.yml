@@ -1,0 +1,16 @@
+---
+collections:
+  - ansible.posix
+  - community.general
+  - community.docker
+  - ansible.netcommon
+  - community.sops
+  - ansible.utils
+  - kewlfft.aur
+
+roles:
+  - name: debian_setup
+    src: https://github.com/fred-drake/ansible-role-debian-setup.git
+    version: master
+  - name: geerlingguy.docker
+  - name: geerlingguy.pip

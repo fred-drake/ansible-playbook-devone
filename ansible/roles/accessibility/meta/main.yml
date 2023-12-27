@@ -1,0 +1,13 @@
+---
+galaxy_info:
+  author: Fred Drake
+  description: Enable accessibility within the host
+  company: None
+
+  license: MIT
+
+  min_ansible_version: "2.1"
+
+  galaxy_tags: []
+
+dependencies: []

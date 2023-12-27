@@ -1,0 +1,25 @@
+---
+- name: Install development packages
+  community.general.pacman:
+    name:
+      - base-devel
+      - git
+      - direnv
+      - rustup
+    state: present
+    update_cache: true
+  
+- name: Install yay
+  become: false
+  kewlfft.aur.aur:
+    name: yay
+    state: present
+    update_cache: true
+
+- name: Install AUR packages
+  become: false
+  kewlfft.aur.aur:
+    name:
+      - act
+    state: present
+    update_cache: true

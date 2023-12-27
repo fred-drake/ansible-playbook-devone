@@ -1,0 +1,23 @@
+---
+- name: Upgrade all packages from official repository
+  community.general.pacman:
+    upgrade: true
+    update_cache: true
+
+- name: Check for file /usr/bin/yay
+  ansible.builtin.stat:
+    path: /usr/bin/yay
+  register: yay_file
+
+- name: Fail if /usr/bin/yay does not exist
+  ansible.builtin.fail:
+    msg: "yay is not installed"
+  when: not yay_file.stat.exists
+
+
+- name: Upgrade all AUR packages
+  kewlfft.aur.aur:
+    upgrade: true
+    use: yay
+    update_cache: true
+    aur_only: true

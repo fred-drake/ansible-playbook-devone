@@ -1,0 +1,21 @@
+---
+- name: Modify logind.conf file
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/systemd/logind.conf
+    regexp: '^#?HandleLidSwitch='
+    line: 'HandleLidSwitch=ignore'
+    state: present
+  notify: Restart systemd-logind service
+
+- name: Modify logind.conf file
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/systemd/logind.conf
+    regexp: '^#?LidSwitchIgnoreInhibited='
+    line: 'LidSwitchIgnoreInhibited=no'
+    state: present
+  notify: Restart systemd-logind service
+
+- name: Restart service now, if necessary
+  ansible.builtin.meta: flush_handlers

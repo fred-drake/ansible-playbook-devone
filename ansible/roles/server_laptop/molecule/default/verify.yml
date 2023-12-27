@@ -1,0 +1,10 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: Check if LidSwitchIgnoreInhibited is set to no in logind.conf
+      become: true
+      ansible.builtin.command: |
+        grep -q '^LidSwitchIgnoreInhibited=no' \
+        /etc/systemd/logind.conf
+      changed_when: false
