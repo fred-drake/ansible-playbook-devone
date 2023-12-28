@@ -8,6 +8,7 @@
 galaxy_collections/
 id_ansible
 **/*.tmp.yml
+galaxy_roles/
 
 # Trash
 .DS_Store
