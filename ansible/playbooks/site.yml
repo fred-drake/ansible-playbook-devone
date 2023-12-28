@@ -11,5 +11,4 @@
     - server_laptop
     - accessibility
     - docker
-    - devtools
-    - system_upgrade
+    - packagesync

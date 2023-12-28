@@ -3,6 +3,40 @@
 ansible_host: 192.168.30.31
 ansible_user: fdrake
 
+packagesync_arch_packages_install:
+  - base-devel
+  - git
+  - direnv
+  - rustup
+  - neovim
+  - fish
+  - fisher
+  - fzf
+  - fd
+  - bat
+  - fasd
+  - lazygit
+  - less
+  - eza
+  - go-yq
+  - age
+  - chezmoi
+  - helm
+  - kubectl
+  - lsd
+  - neofetch
+  - restic
+  - sops
+
+packagesync_aur_packages_install:
+  - act
+  - asdf-vm
+  - ttf-meslo-nerd-font-powerlevel10k
+  - ghq
+  - hadolint
+  - visual-studio-code-bin
+
+
 # archinstall configuration in YAML format
 archinstall_user_configuration:
   additional-repositories: []

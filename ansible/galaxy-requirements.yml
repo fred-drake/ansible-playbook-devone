@@ -12,5 +12,8 @@ roles:
   - name: debian_setup
     src: https://github.com/fred-drake/ansible-role-debian-setup.git
     version: master
+  - name: packagesync
+    src: https://github.com/fred-drake/ansible-role-packagesync.git
+    version: master
   - name: geerlingguy.docker
   - name: geerlingguy.pip
