@@ -3,6 +3,8 @@
 ansible_host: 192.168.30.31
 ansible_user: fdrake
 
+packagesync_install_one_at_a_time: true
+
 packagesync_arch_packages_install:
   - base-devel
   - git
@@ -34,7 +36,7 @@ packagesync_aur_packages_install:
   - ttf-meslo-nerd-font-powerlevel10k
   - ghq
   - hadolint
-  - visual-studio-code-bin
+  # - visual-studio-code-bin
 
 
 # archinstall configuration in YAML format

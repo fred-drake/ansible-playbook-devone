@@ -7,8 +7,16 @@
     docker_users:
       - "{{ ansible_user }}"
 
+  tasks:
+    - name: server_laptop
+      include_role:
+        name: server_laptop
+      when: server_laptop_enabled | default(true)
+    - name: Change ansible_user's shell to /usr/bin/fish
+      user:
+        name: "{{ ansible_user }}"
+        shell: /usr/bin/fish
   roles:
-    - server_laptop
     - accessibility
     - docker
     - packagesync

@@ -1,0 +1,37 @@
+---
+# Arch WSL2 system on PC rig
+ansible_host: fredpc-arch
+ansible_user: fdrake
+server_laptop_enabled: false
+packagesync_arch_packages_install:
+  - base-devel
+  - git
+  - direnv
+  - rustup
+  - neovim
+  - fish
+  - fisher
+  - fzf
+  - fd
+  - bat
+  - fasd
+  - lazygit
+  - less
+  - eza
+  - go-yq
+  - age
+  - chezmoi
+  - helm
+  - kubectl
+  - lsd
+  - neofetch
+  - restic
+  - sops
+
+packagesync_aur_packages_install:
+  - act
+  - asdf-vm
+  - ttf-meslo-nerd-font-powerlevel10k
+  - ghq
+  - hadolint
+  # - visual-studio-code-bin
