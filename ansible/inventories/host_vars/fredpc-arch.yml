@@ -27,11 +27,11 @@ packagesync_arch_packages_install:
   - neofetch
   - restic
   - sops
+  - just
 
 packagesync_aur_packages_install:
-  - act
+  - act-bin
   - asdf-vm
   - ttf-meslo-nerd-font-powerlevel10k
-  - ghq
-  - hadolint
-  # - visual-studio-code-bin
+  - ghq-bin
+  - hadolint-bin
