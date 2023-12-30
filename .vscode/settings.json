@@ -6,7 +6,7 @@
   "python.testing.pytestEnabled": true,
   "yaml.validate": true,
   "yaml.schemaStore.enable": true,
-  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
   "sops.enabled": true,
   "sops.binPath": "/usr/local/bin/sops",
   "yaml.schemas": {
@@ -15,7 +15,9 @@
   "files.associations": {
     "*.sops.yml": "yaml",
     "**/roles/**/*.{yml,yaml}": "ansible",
-    "**/playbooks/**/*.{yml,yaml}": "ansible"
+    "**/playbooks/**/*.{yml,yaml}": "ansible",
+    ".yamllint": "yaml",
+    ".ansible-lint": "yaml"
   },
   "ansible.python.interpreterPath": "/workspaces/infrastructure/.direnv/python-3.10.0/bin/python"
 }

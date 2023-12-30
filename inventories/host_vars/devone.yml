@@ -4,6 +4,7 @@ ansible_host: 192.168.30.31
 ansible_user: fdrake
 
 packagesync_install_one_at_a_time: true
+server_laptop_enabled: true
 
 packagesync_arch_packages_install:
   - base-devel

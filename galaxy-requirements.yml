@@ -15,5 +15,3 @@ roles:
   - name: packagesync
     src: https://github.com/fred-drake/ansible-role-packagesync.git
     version: master
-  - name: geerlingguy.docker
-  - name: geerlingguy.pip

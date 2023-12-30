@@ -1,6 +1,6 @@
 ---
 # Arch WSL2 system on PC rig
-ansible_host: fredpc-arch
+ansible_host: fredpc-arch-ansible
 ansible_user: fdrake
 server_laptop_enabled: false
 packagesync_arch_packages_install:

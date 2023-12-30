@@ -2,5 +2,5 @@
 profile: production
 
 exclude_paths:
-  - ansible/galaxy_collections/
-  - ansible/galaxy_roles/
+  - galaxy_collections/
+  - galaxy_roles/

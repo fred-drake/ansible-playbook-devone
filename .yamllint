@@ -3,8 +3,8 @@ extends: default
 
 ignore:
   - "*.sops.yml"
-  - ansible/galaxy_collections/
-  - ansible/galaxy_roles/
+  - galaxy_collections/
+  - galaxy_roles/
   - .direnv/
 
 rules:
