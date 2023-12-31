@@ -5,6 +5,7 @@ ansible_user: fdrake
 
 packagesync_install_one_at_a_time: true
 server_laptop_enabled: true
+shell_executable_path: /usr/bin/fish
 
 packagesync_arch_packages_install:
   - base-devel
