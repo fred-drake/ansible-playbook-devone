@@ -11,8 +11,12 @@ deploy-password HOST:
     ansible-playbook -i./inventories playbooks/site.yml --limit {{ HOST }} --ask-pass --ask-become-pass
 
 lint:
-    yamllint ansible/
+    yamllint .
     ansible-lint
 
 test:
     cd roles/server_laptop && molecule test
+
+deps:
+    pip install -r dev-requirements.txt
+    ansible-galaxy install -r galaxy-requirements.yml --force
