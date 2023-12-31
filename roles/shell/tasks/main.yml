@@ -1,0 +1,6 @@
+---
+- name: Change user's shell
+  ansible.builtin.user:
+    name: "{{ ansible_user }}"
+    shell: "{{ shell_executable_path }}"
+  notify: Reset Distrod

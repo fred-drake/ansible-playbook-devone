@@ -8,12 +8,12 @@
       - "{{ ansible_user }}"
 
   tasks:
-    - name: server_laptop
-      include_role:
+    - name: Server_laptop
+      ansible.builtin.include_role:
         name: server_laptop
       when: server_laptop_enabled | default(false)
     - name: Change ansible_user's shell to /usr/bin/fish
-      user:
+      ansible.builtin.user:
         name: "{{ ansible_user }}"
         shell: /usr/bin/fish
       when: false
@@ -21,3 +21,4 @@
     - accessibility
     - docker
     - packagesync
+    - shell

@@ -1,0 +1,12 @@
+---
+- name: Check distrod
+  ansible.builtin.stat:
+    path: /opt/distrod/bin/distrod
+  register: distrod_stat
+  listen: "Reset Distrod"
+
+- name: Enable distrod
+  ansible.builtin.command: /opt/distrod/bin/distrod enable
+  changed_when: true
+  when: distrod_stat.stat.exists
+  listen: "Reset Distrod"

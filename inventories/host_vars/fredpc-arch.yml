@@ -1,8 +1,9 @@
 ---
 # Arch WSL2 system on PC rig
-ansible_host: fredpc-arch-ansible
+ansible_host: fredpc-arch
 ansible_user: fdrake
 server_laptop_enabled: false
+shell_executable_path: /usr/bin/fish
 packagesync_arch_packages_install:
   - base-devel
   - git

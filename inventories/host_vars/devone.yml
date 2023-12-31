@@ -36,8 +36,6 @@ packagesync_aur_packages_install:
   - asdf-vm
   - ttf-meslo-nerd-font-powerlevel10k
   - ghq
-  - hadolint
-  # - visual-studio-code-bin
 
 
 # archinstall configuration in YAML format
