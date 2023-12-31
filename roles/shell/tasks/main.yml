@@ -1,6 +1,13 @@
 ---
+- name: Temp distrod alias path
+  ansible.builtin.set_fact:
+    distrod_alias_path: "/opt/distrod/alias{{ shell_executable_path }}"
+
 - name: Change user's shell
   ansible.builtin.user:
     name: "{{ ansible_user }}"
     shell: "{{ shell_executable_path }}"
   notify: Reset Distrod
+  when: >
+    lookup('env', 'SHELL') != shell_executable_path
+    and lookup('env', 'SHELL') != distrod_alias_path
