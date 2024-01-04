@@ -1,0 +1,58 @@
+---
+name: CI
+"on":
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+defaults:
+  run:
+    working-directory: .
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install PIP dependencies
+        run: pip install -r dev-requirements.txt
+
+      - name: Install Galaxy dependencies
+        run: ansible-galaxy install -r galaxy-requirements.yml
+
+      - name: Check all yaml with yamllint
+        run: yamllint .
+
+      - name: Check all ansible with ansible-lint
+        run: ansible-lint .
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install PIP dependencies
+        run: pip install -r dev-requirements.txt
+
+      - name: Install Galaxy dependencies
+        run: ansible-galaxy install -r galaxy-requirements.yml
+
+      - name: Run molecule tests
+        run: molecule test --destroy never
+        env:
+          PY_COLORS: "1"
+          ANSIBLE_FORCE_COLOR: "1"
