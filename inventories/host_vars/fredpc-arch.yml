@@ -35,4 +35,4 @@ packagesync_aur_packages_install:
   - asdf-vm
   - ttf-meslo-nerd-font-powerlevel10k
   - ghq-bin
-  - hadolint-bin
+  - python310
